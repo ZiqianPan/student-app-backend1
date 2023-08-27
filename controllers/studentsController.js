@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllStudents, getStudentByID } = require("../queries/studentQueries");
+const { getAllStudents, getStudentById } = require("../queries/studentQueries");
 const studentsController = express.Router();
 
 studentsController.get("/", (request, response) => {
@@ -15,7 +15,7 @@ studentsController.get("/", (request, response) => {
 studentsController.get("/:id", (request, response) => {
   try {
     const { id } = request.params;
-    const student = getStudentByID(id);
+    const student = getStudentById(id);
 
     if (student) {
       response.status(200).json({ data: student });

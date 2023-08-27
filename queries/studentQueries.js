@@ -5,10 +5,10 @@ const getAllStudents = () => {
   return students;
 };
 
-const getStudentByID = (id) => {
+const getStudentById = (id) => {
   const { students } = studentsData;
   const student = students.find((student) => student.id === id);
   return student;
 };
 
-module.exports = { getAllStudents, getStudentByID };
+module.exports = { getAllStudents, getStudentById };
